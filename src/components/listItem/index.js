@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Card from '../detailcard';
 import styled from 'styled-components';
 
 class ListItem extends Component {

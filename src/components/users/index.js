@@ -28,7 +28,9 @@ class Users extends Component {
 		if (this.state.totalPages && (page < 0 || page > this.state.totalPages)) {
 			return;
 		}
-
+		this.setState({
+			loading: true
+		})
 		fetch(`${API}?page=${page}`)
 			.then((response) => response.json())
 			.then((pageData) => this.setPageData(pageData))
@@ -48,13 +50,15 @@ class Users extends Component {
 			currentPage: pageData.page,
 			page: pageData.page,
 			currentUsers,
-			disable
+			disable,
+			loading: false
 		})
 	}
 
 	render() {
 		return (
 			<Main>
+				{this.state.loading? <Loader/> : null}
 				<div>
 					<PageTitle>Users</PageTitle>
 					<UserList list={this.state.currentUsers} />
@@ -79,5 +83,14 @@ const PageTitle = styled.h2`
 	font-size: 3.4rem;
 	margin-bottom: 2.4rem;
 `
+const Loader = styled.div`
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+    z-index: 3;
+    left: 0;
+    background: rgba(255,255,255,0.7);
 
+`
 export default Users;

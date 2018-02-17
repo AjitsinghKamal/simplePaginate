@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ListItem from '../listItem';
-import Card from '../detailcard';
 
 class UserList extends Component{
 	constructor(props) {

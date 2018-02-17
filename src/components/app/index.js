@@ -47,7 +47,7 @@ const Container = styled.div`
 	width: 100%;
 	max-width: 1160px;
 	margin: 0 auto;
-	padding: 8rem 1.6rem 1.6rem;
+	padding: 6rem 1.6rem 1.6rem;
 	min-height: calc(100vh - 8rem);
     display: flex;
     flex-flow: column;
