@@ -10,7 +10,7 @@ class UserList extends Component{
 	}
 	createList() {
 		return this.props.list.map( (data, index) => (
-			<ListItem key={index} user={data}/>
+			<ListItem key={index} user={data} placeholder={this.props.loading}/>
 		))
 	}
 

@@ -61,7 +61,7 @@ class Users extends Component {
 				{this.state.loading? <Loader/> : null}
 				<div>
 					<PageTitle>Users</PageTitle>
-					<UserList list={this.state.currentUsers} />
+					<UserList list={this.state.currentUsers} loading={this.state.loading}/>
 				</div>
 				<Navigator totalPage={this.state.totalPages} current={this.state.page} getPage={this.getUsersData} disable={this.state.disable} />
 			</Main>
