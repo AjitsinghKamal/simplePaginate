@@ -29,11 +29,11 @@ class ListItem extends Component {
 					{this.props.placeholder ? null : <Avatar src={this.props.user.avatar} />}
 				</AvatarFrame>
 				<Aside showDetail={this.state.detail}>
-					<Text placeholder={this.props.placeholder}>
+					<Text placeholder={this.props.placeholder ? 1: 0}>
 						{this.props.user.first_name}
 						<LastName> {this.props.user.last_name}</LastName>
 					</Text>
-					<Text placeholder={this.props.placeholder}>User id: {`@${this.props.user.id}`}</Text>
+					<Text placeholder={this.props.placeholder ? 1 : 0}>User id: {`@${this.props.user.id}`}</Text>
 				</Aside>
 				<Detail showDetail={this.state.detail}>
 					<DetailText>

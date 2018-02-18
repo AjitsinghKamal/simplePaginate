@@ -69,11 +69,17 @@ const PageNumber = styled.li`
 	cursor: pointer;
 	transition: background 0.4s;
 	background-color: ${props => props.active ? '#FFCC80' : null};
-	&:hover,
+	
 	&:active {
 		background-color: ${props => !props.active ? '#FFF3E0' : '#FFCC80'};
 	}
-	@media (max-width: 720px) {
+	
+	@media screen and (min-width: 1024px) {
+		&:hover {
+			background-color: ${props => !props.active ? '#FFF3E0' : '#FFCC80'};
+		}
+	}
+	@media screen and (max-width: 720px) {
 		display: none;
 	}
 `
@@ -93,9 +99,15 @@ const Button = styled.button`
 	box-shadow: 0 0 4px #939090;
 	width: 4rem;
 	transition: background 0.4s;
-	&:hover,
+	
 	&:active {
 		background-color: #FF9800;
+	}
+
+	@media screen and (min-width: 1024px) {
+		&:hover {
+			background-color: #FF9800;
+		}
 	}
 
 `
